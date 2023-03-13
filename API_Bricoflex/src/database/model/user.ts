@@ -1,5 +1,6 @@
+
 import sequelize from '../instance';
-import DataTypes from 'sequelize';
+import {Model ,DataTypes} from 'sequelize';
 
 //modele user//
 const User = sequelize.define('User', {
@@ -39,8 +40,10 @@ const User = sequelize.define('User', {
       allowNull: false
     },
 
-  }, {
- 
+  },
+  
+  {
+
   });
 
   export default User;

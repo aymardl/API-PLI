@@ -1,21 +1,30 @@
 import sequelize from "./instance";
-import User from "./model/user";
+import User from './model/user';
+//Migrate the models in the database.
+async function migrate() {
+    try {
+        await sequelize.authenticate();
+        // await Order.sync();
+        await User.sync();
+        // await Category.sync();
+        // await Product.sync();
+    }   catch (error) {
+        console.error(error);
+    } finally {
+        await sequelize.close();
+    }
+}
+
+migrate();
 
 
-try {
-    sequelize.authenticate();
-    console.log('Connection has been established successfully.');
-  } catch (error) {
+async function connect() {
+    try {
+      await sequelize.authenticate();
+      console.log('Connection has been established succesfully.')
+    }   catch (error) {
       console.error('Unable to connect to the database:', error);
+    }
   }
-
-  async function migrate(User: any) {
-    console.log("ff");
-    await User.sync({ alter: true }).then(() => {
-      console.log("The table for the User model was just (re)created!");
-    }).catch((error: any) => {
-      console.error("ceci est une erreur", error);
-    })}
-
-    sequelize.query('INSERT INTO Test (name) VALUES ("thisisatest")');
-    migrate(User);
+  
+  export default connect;

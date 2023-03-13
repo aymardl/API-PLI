@@ -28,13 +28,13 @@ export async function updateUser(req: Request, res: Response) {
     }
     else {
         const updateressource =  await Test.update({
-            Nom: req.body.Name,
-            Prénom: req.body.Lastname,
-            Mail: req.body.Mail,
-            Telephonenumber: req.body.Telephonenumber,
-            Password: req.body.Password,
-            Compétences: req.body.Compétences,
-            Description: req.body.Description,
+          Nom: req.body.Nom,
+          Prénom: req.body.Prénom,
+          Mail: req.body.Mail,
+          Telephonenumber: req.body.Telephonenumber,
+          Password: req.body.Password,
+          Compétences: req.body.Compétences,
+          Description: req.body.Description,
         });
         res.send(updateressource);  
     };
@@ -48,8 +48,8 @@ export async function deleteUser(req: Request, res: Response) {
     }
     else {
       const deleteressource = await Test.destroy({
-        Nom: req.body.Name,
-        Prénom: req.body.Lastname,
+        Nom: req.body.Nom,
+        Prénom: req.body.Prénom,
         Mail: req.body.Mail,
         Telephonenumber: req.body.Telephonenumber,
         Password: req.body.Password,

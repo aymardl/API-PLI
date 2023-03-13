@@ -1,4 +1,5 @@
 import { create, deleteById, getAll, getById, updateById } from "../controllers/user_controller"
+import { createUser, deleteUser, updateUser } from "../services/user_service";
 
 
 const Express = require('express');
@@ -8,11 +9,11 @@ routeruser.get('/', getAll);
 
 routeruser.get('/:id', getById);
 
-routeruser.post('/', create);
+routeruser.post('/', createUser);
 
-routeruser.patch('/:id', updateById);
+routeruser.patch('/:id', updateUser);
 
-routeruser.delete('/:id', deleteById);
+routeruser.delete('/:id', deleteUser);
 
 
 export default routeruser;
