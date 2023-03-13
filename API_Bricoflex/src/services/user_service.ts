@@ -8,8 +8,8 @@ export async function createUser(req: Request, res: Response) {
       } 
       else {
         const newressource = await User.create({
-          Nom: req.body.Name,
-          Prénom: req.body.Lastname,
+          Nom: req.body.Nom,
+          Prénom: req.body.Prénom,
           Mail: req.body.Mail,
           Telephonenumber: req.body.Telephonenumber,
           Password: req.body.Password,

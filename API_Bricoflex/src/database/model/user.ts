@@ -30,12 +30,12 @@ const User = sequelize.define('User', {
     },
 
     Compétences: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.STRING,
       allowNull: false
     },
 
     Description: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.STRING,
       allowNull: false
     },
 

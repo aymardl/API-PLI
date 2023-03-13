@@ -20,7 +20,7 @@ export async function getById(req: Request, res: Response) {
 
 //fonction permettant de crée un user via une autre fonction importer des services//
 export function create(req: Request, res: Response) {
-  async function createUser(req: Request, res: Response) {
+   async function createUser(req: Request, res: Response) {
     try {
       res.send(create);
     }
@@ -61,12 +61,13 @@ export async function register(req: Request, res: Response) {
     } 
     else {
       const addproduct = await User.create({
-        Iduser: req.body.Id,
-        Name: req.body.Name,
-        Password: req.body.Password,
-        Lastname: req.body.Lastname,
+        Nom: req.body.Nom,
+        Prénom: req.body.Prénom,
         Mail: req.body.Mail,
-        Telephonenumber: req.body.Telephonenumber
+        Telephonenumber: req.body.Telephonenumber,
+        Password: req.body.Password,
+        Compétences: req.body.Compétences,
+        Description: req.body.Description
     });
     res.send(addproduct);
   };
